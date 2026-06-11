@@ -15,7 +15,7 @@
 
 ### Как подать заявку? <a href="#kak-podat-zayavku" id="kak-podat-zayavku"></a>
 
-Подать заявку в команду проекта можно через ссылку [Google Forms](https://docs.google.com/forms/d/e/1FAIpQLSdVnbVNp4vywPqFRZE_LwtwqM2PTEEKNiGaZwCoTz0Hh9pjbA/viewform?usp=header)
+Подать заявку в команду проекта можно через ссылку [wiki.valorian.fun](https://wiki.valorian.fun/)
 
 !!! info ""
     При подаче заявки расскажите о своём опыте и почему хотите стать частью команды.

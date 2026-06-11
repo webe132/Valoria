@@ -10,4 +10,4 @@
 * 3 Месяца - `399₽`
 * Сезон - `699₽`
 
-Покупка подписки происходит через [shop.valorian.fun](https://valoria.cdonate.ru/)
+Покупка подписки происходит через [valoria.easydonate.ru](https://valoria.easydonate.ru/)

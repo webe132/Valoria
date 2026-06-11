@@ -164,7 +164,6 @@ img { max-width: 100%; }
 .card-icon svg { width: 26px; height: 26px; }
 .ci-discord  { color: #5865f2; background: rgba(88, 101, 242, .12);  border-color: rgba(88, 101, 242, .35); }
 .ci-telegram { color: #29a9eb; background: rgba(41, 169, 235, .12);  border-color: rgba(41, 169, 235, .35); }
-.ci-youtube  { color: #ff0033; background: rgba(255, 0, 51, .12);    border-color: rgba(255, 0, 51, .35); }
 .ci-tiktok   { color: #ffffff; background: rgba(255, 255, 255, .08); border-color: rgba(255, 255, 255, .3); }
 .feature-grid .card { padding: 22px 20px; }
 .feature-grid .card h3 { font-size: 13px; }

@@ -34,5 +34,5 @@
 
 ### 🔗 Полезные ссылки
 
-<table><thead><tr><th>Ресурс</th><th valign="middle">Ссылка</th><th data-hidden></th></tr></thead><tbody><tr><td>Официальный сайт</td><td valign="middle">Скоро...</td><td></td></tr><tr><td>Discord-сервер</td><td valign="middle"><a href="https://discord.gg/GKBgTjb7cX">discord.gg/GKBgTjb7cX</a></td><td></td></tr><tr><td>Telegram-канал</td><td valign="middle"><a href="https://t.me/Valoria_LastTime">t.me/Valoria_LastTime</a></td><td></td></tr><tr><td>YouTube</td><td valign="middle"><a href="https://www.youtube.com/@ValoriaProject">www.youtube.com/@ValoriaProject</a></td><td></td></tr><tr><td>TikTok</td><td valign="middle"><a href="https://www.tiktok.com/@off.valoria">www.tiktok.com/@off.valoria</a></td><td></td></tr></tbody></table>
+<table><thead><tr><th>Ресурс</th><th valign="middle">Ссылка</th><th data-hidden></th></tr></thead><tbody><tr><td>Официальный сайт</td><td valign="middle">Скоро...</td><td></td></tr><tr><td>Discord-сервер</td><td valign="middle"><a href="https://discord.gg/GKBgTjb7cX">discord.gg/GKBgTjb7cX</a></td><td></td></tr><tr><td>Telegram-канал</td><td valign="middle"><a href="https://t.me/Valoria_LastTime">t.me/Valoria_LastTime</a></td><td></td></tr><tr><td>TikTok</td><td valign="middle"><a href="https://www.tiktok.com/@off.valoria">www.tiktok.com/@off.valoria</a></td><td></td></tr></tbody></table>
 
