@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ title }}</title>
+<meta name="description" content="Valoria — приватный мир Minecraft, где ценятся уют, спокойствие и настоящее удовольствие от игры.">
+<link rel="icon" href="{{ root }}assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;900&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ root }}static/style.css">
+</head>
+<body data-root="{{ root }}">
+
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="nav-brand" href="{{ root }}./">
+      <img src="{{ root }}assets/logo.png" alt="Valoria">
+      <span>Valoria</span>
+    </a>
+    <nav class="nav-links">
+      <a href="{{ root }}./">Главная</a>
+      <a href="{{ root }}informaciya/komandy/">Вики</a>
+      <a href="{{ root }}prochaya-informaciya/rabotat-s-nami/">Работать с нами</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="search-btn" id="search-open" type="button" aria-label="Поиск">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        <span>Поиск</span>
+      </button>
+      <a class="btn btn-primary btn-sm" href="https://discord.gg/GKBgTjb7cX" target="_blank" rel="noopener">Играть</a>
+      <button class="burger" id="burger" type="button" aria-label="Меню">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+{% block content %}{% endblock %}
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="{{ root }}assets/logo.png" alt="">
+      <div>
+        <strong>Valoria</strong>
+        <p>Приватный мир Minecraft — уют, спокойствие и удовольствие от игры.</p>
+      </div>
+    </div>
+    <div class="footer-links">
+      <a href="https://discord.gg/GKBgTjb7cX" target="_blank" rel="noopener">Discord</a>
+      <a href="https://t.me/Valoria_LastTime" target="_blank" rel="noopener">Telegram</a>
+      <a href="https://www.youtube.com/@ValoriaProject" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://www.tiktok.com/@off.valoria" target="_blank" rel="noopener">TikTok</a>
+    </div>
+  </div>
+  <p class="footer-note">Valoria не связана с Mojang Studios и Microsoft.</p>
+</footer>
+
+<div class="search-modal" id="search-modal" hidden>
+  <div class="search-backdrop" id="search-backdrop"></div>
+  <div class="search-panel">
+    <input type="search" id="search-input" placeholder="Поиск по вики…" autocomplete="off">
+    <div class="search-results" id="search-results"></div>
+  </div>
+</div>
+
+<script src="{{ root }}static/app.js"></script>
+</body>
+</html>

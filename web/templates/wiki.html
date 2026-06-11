@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="wiki">
+  <aside class="sidebar" id="sidebar">
+    <nav class="sidebar-nav">
+      {% for group in nav %}
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">{{ group.group }}</div>
+        {% for item in group["items"] %}
+          {% if item.children %}
+          <details class="sidebar-tree" {% if active and active.startswith(item.path) %}open{% endif %}>
+            <summary class="sidebar-item {% if active == item.path %}active{% endif %}">
+              <span class="si-icon">{{ item.icon }}</span>{{ item.title }}
+              <svg class="chev" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="m9 6 6 6-6 6"/></svg>
+            </summary>
+            <div class="sidebar-children">
+              <a class="sidebar-item sub {% if active == item.path %}active{% endif %}" href="{{ root }}{{ item.path }}/"><span class="si-icon">📂</span>Обзор</a>
+              {% for child in item.children %}
+              <a class="sidebar-item sub {% if active == child.path %}active{% endif %}" href="{{ root }}{{ child.path }}/"><span class="si-icon">{{ child.icon }}</span>{{ child.title }}</a>
+              {% endfor %}
+            </div>
+          </details>
+          {% else %}
+          <a class="sidebar-item {% if active == item.path %}active{% endif %}" href="{{ root }}{{ item.path }}/"><span class="si-icon">{{ item.icon }}</span>{{ item.title }}</a>
+          {% endif %}
+        {% endfor %}
+      </div>
+      {% endfor %}
+    </nav>
+  </aside>
+
+  <main class="content">
+    <article class="article">
+      <h1 class="article-title"><span class="article-icon">{{ page.icon }}</span>{{ page.title }}</h1>
+      {% if cards %}
+      <p class="section-sub" style="text-align:left">Кастомные механики и особенности сервера Valoria:</p>
+      <div class="cards cards-3 feature-grid">
+        {% for item in cards %}
+        <a class="card card-link" href="{{ root }}{{ item.path }}/">
+          <div class="card-icon">{{ item.icon }}</div>
+          <h3>{{ item.title }}</h3>
+        </a>
+        {% endfor %}
+      </div>
+      {% else %}
+      <div class="prose">{{ body }}</div>
+      {% endif %}
+
+      <nav class="pager">
+        {% if prev %}
+        <a class="pager-link prev" href="{{ root }}{{ prev.path }}/">
+          <span class="pager-dir">← Назад</span>
+          <span class="pager-title">{{ prev.icon }} {{ prev.title }}</span>
+        </a>
+        {% else %}<span></span>{% endif %}
+        {% if next %}
+        <a class="pager-link next" href="{{ root }}{{ next.path }}/">
+          <span class="pager-dir">Вперёд →</span>
+          <span class="pager-title">{{ next.icon }} {{ next.title }}</span>
+        </a>
+        {% endif %}
+      </nav>
+    </article>
+  </main>
+</div>
+
+{% endblock %}

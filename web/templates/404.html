@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<main class="landing">
+  <section class="hero hero-404">
+    <div class="hero-glow hero-glow-1"></div>
+    <div class="hero-inner">
+      <h1 class="hero-title">404</h1>
+      <p class="hero-sub">Такой страницы нет — возможно, её перенесли или удалили.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary btn-lg" id="home-link" href="./">На главную</a>
+      </div>
+    </div>
+  </section>
+</main>
+<script>
+  // GH Pages serves 404.html from any depth — point "home" at the site root
+  var seg = location.pathname.split('/')[1];
+  document.getElementById('home-link').href = seg ? '/' + seg + '/' : '/';
+</script>
+{% endblock %}
