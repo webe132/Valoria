@@ -66,7 +66,7 @@ def flatten(nav):
 
 
 def md_to_html(md_text, depth):
-    # strip leading "# Title" — the template renders the page header itself
+    # strip leading "# Title" - the template renders the page header itself
     md_text = re.sub(r"^#\s+.*\n", "", md_text.lstrip(), count=1)
     # rewrite asset references for the new output depth (pages live one level deeper)
     md_text = re.sub(r"(\.\./)*assets/", "../" * depth + "assets/", md_text)
@@ -85,9 +85,13 @@ def text_of(html_text):
 
 env = Environment(loader=FileSystemLoader(os.path.join(WEB, "templates")), autoescape=False)
 
-if os.path.exists(OUT):
-    shutil.rmtree(OUT)
-os.makedirs(OUT)
+# clear site/ but keep its .git: the gh-pages branch is pushed from there
+os.makedirs(OUT, exist_ok=True)
+for entry in os.listdir(OUT):
+    if entry == ".git":
+        continue
+    full = os.path.join(OUT, entry)
+    shutil.rmtree(full) if os.path.isdir(full) else os.remove(full)
 shutil.copytree(os.path.join(DOCS, "assets"), os.path.join(OUT, "assets"))
 os.makedirs(os.path.join(OUT, "static"))
 for f in ("style.css", "app.js"):
@@ -100,7 +104,7 @@ search_index = []
 # landing page
 landing = env.get_template("landing.html")
 with open(os.path.join(OUT, "index.html"), "w", encoding="utf-8") as f:
-    f.write(landing.render(root="", nav=NAV, active=None, title="Valoria — приватный Minecraft-сервер"))
+    f.write(landing.render(root="", nav=NAV, active=None, title="Valoria - приватный Minecraft-сервер"))
 
 # wiki pages
 wiki = env.get_template("wiki.html")
@@ -110,7 +114,7 @@ for i, page in enumerate(pages):
     with open(src, encoding="utf-8") as f:
         body = md_to_html(f.read(), depth)
 
-    # the "Фишки сервера" overview is empty in GitBook — render a card grid instead
+    # the "Фишки сервера" overview is empty in GitBook - render a card grid instead
     cards = page.get("children") if not text_of(body) else None
 
     out_dir = os.path.join(OUT, page["path"].replace("/", os.sep))
@@ -125,7 +129,7 @@ for i, page in enumerate(pages):
             cards=cards,
             prev=pages[i - 1] if i > 0 else None,
             next=pages[i + 1] if i + 1 < len(pages) else None,
-            title=f"{page['title']} — Valoria Wiki",
+            title=f"{page['title']} - Valoria Wiki",
         ))
     search_index.append({
         "title": page["title"],
@@ -140,6 +144,6 @@ with open(os.path.join(OUT, "search-index.json"), "w", encoding="utf-8") as f:
 # 404 page
 notfound = env.get_template("404.html")
 with open(os.path.join(OUT, "404.html"), "w", encoding="utf-8") as f:
-    f.write(notfound.render(root="", nav=NAV, active=None, title="404 — Valoria"))
+    f.write(notfound.render(root="", nav=NAV, active=None, title="404 - Valoria"))
 
 print(f"built {len(pages)} wiki pages + landing -> {OUT}")
